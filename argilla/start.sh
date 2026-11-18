@@ -58,4 +58,4 @@ if [ "$REINDEX_DATASETS" = "true" ] || [ "$REINDEX_DATASETS" = "1" ]; then
   python -m argilla_server search-engine reindex
 fi
 
-exec python -m uvicorn "$UVICORN_APP" --host "::" --port "$UVICORN_PORT" --proxy-headers --forwarded-allow-ips "*"
+exec python -m uvicorn "$UVICORN_APP" --host "0.0.0.0" --port "$UVICORN_PORT" --proxy-headers --forwarded-allow-ips "*"
